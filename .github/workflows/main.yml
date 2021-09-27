@@ -37,10 +37,10 @@ jobs:
           
       - run: mkdir -p build
       
-      - run: DATE="date '+%Y-%m-%d %H:%M:%S'"
-             $DATE
+      - run: DATE=$(date '+%Y-%m-%d %H-%M-%S')
+             echo $DATE
 
-      - run: echo hello $(date '+%Y-%m-%d') > build/world.txt
+      - run: echo hello $(date '+%Y-%m-%d %H-%M-%S') > build/world.txt
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
