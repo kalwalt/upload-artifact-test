@@ -38,6 +38,9 @@ jobs:
       - run: mkdir -p build
 
       - run: echo hello > build/world.txt
+      
+      - run: DATE="date +'%Y-%m-%d'"
+             $DATE
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
@@ -52,5 +55,5 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: 'hello world file'
+          message: 'hello world file $DATE'
           add: '.'
