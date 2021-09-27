@@ -55,5 +55,5 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: 'hello world file $DATE'
+          message: 'hello world file {{ $DATE }}'
           add: '.'
