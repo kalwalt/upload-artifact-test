@@ -39,8 +39,6 @@ jobs:
       
       - run: DATE=$(date '+%Y-%m-%d %H-%M-%S')
              echo $DATE
-             FILE_NAME='new hello world file'$(DATE)
-             echo $FILE_NAME
 
       - run: echo hello $(date '+%Y-%m-%d %H-%M-%S') > build/world.txt
 
@@ -57,5 +55,5 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: ${FILE_NAME}
+          message: 'new hello world file ${{ GITHUB_RUN_NUMBER }}'
           add: '.'
