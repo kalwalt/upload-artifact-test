@@ -36,11 +36,11 @@ jobs:
           echo test, and deploy your project.
           
       - run: mkdir -p build
-
-      - run: echo hello > build/world.txt
       
-      - run: DATE="date +'%Y-%m-%d'"
+      - run: DATE="date '+%Y-%m-%d %H:%M:%S'"
              $DATE
+
+      - run: echo hello $DATE > build/world.txt
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
