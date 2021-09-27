@@ -55,5 +55,5 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: 'new hello world file ${GITHUB_RUN_NUMBER}'
+          message: 'new hello world file ${{GITHUB_RUN_NUMBER}}'
           add: '.'
