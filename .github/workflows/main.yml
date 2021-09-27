@@ -40,7 +40,7 @@ jobs:
       - run: DATE="date '+%Y-%m-%d %H:%M:%S'"
              $DATE
 
-      - run: echo hello $DATE > build/world.txt
+      - run: echo hello $(date '+%Y-%m-%d') > build/world.txt
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
