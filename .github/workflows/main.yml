@@ -45,10 +45,10 @@ jobs:
       - run: mkdir -p build
       
       - run: |
-          DATE=$(date '+%Y-%m-%d %H-%M-%S')
+          DATE=$(date '+%Y-%m-%d-%H-%M-%S')
           echo $DATE
 
-      - run: echo hello $(date '+%Y-%m-%d %H-%M-%S') > build/world.txt
+      - run: echo hello $(date '+%Y-%m-%d-%H-%M-%S') > build/world.txt
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
@@ -63,5 +63,5 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: new hello world file ${{ env.githubRunNumber }}
+          message: new hello world file ${{ DATE }}
           add: '.'
