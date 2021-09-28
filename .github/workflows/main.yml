@@ -44,8 +44,9 @@ jobs:
           
       - run: mkdir -p build
       
-      - run: DATE=$(date '+%Y-%m-%d %H-%M-%S')
-             echo $DATE
+      - run: |
+          DATE=$(date '+%Y-%m-%d %H-%M-%S')
+          echo $DATE
 
       - run: echo hello $(date '+%Y-%m-%d %H-%M-%S') > build/world.txt
 
