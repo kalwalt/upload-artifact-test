@@ -44,7 +44,9 @@ jobs:
           
       - run: mkdir -p build
       
-      - run: |
+      - name: Echoing DATE
+        id: date
+        run: |
           DATE=$(date '+%Y-%m-%d-%H-%M-%S')
           echo $DATE
 
@@ -63,7 +65,7 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: new hello world file ${{ DATE }}
+          message: new hello world file ${{ steps.date.outputs.date }}
           add: 'build/world.txt'
       - name: Get version and changelog
         id: data
