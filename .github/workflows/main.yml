@@ -5,10 +5,7 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -66,7 +63,7 @@ jobs:
         with:
           author_name: kalwalt
           author_email: info@kalwaltart.it
-          message: new hello world file ${{ steps.date.outputs.date }}
+          message: new hello world file
           add: 'build/world.txt'
       - name: Get version and changelog
         id: data
