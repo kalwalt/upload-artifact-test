@@ -64,4 +64,18 @@ jobs:
           author_name: kalwalt
           author_email: info@kalwaltart.it
           message: new hello world file ${{ DATE }}
-          add: '.'
+          add: 'build/world.txt'
+      - name: Get version and changelog
+        id: data
+        run: |
+          VERSION=$(head -n 1 CHANGELOG.md | tr -d "## Version ")
+          echo "::set-output name=version::$VERSION"
+          #tail -n +2 CHANGELOG.md | sed -e '/^$/,$d' > CHANGELOG.txt
+      - name: Create a release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Version ${{ steps.data.outputs.version }}
+          body-path: CHANGELOG.txt
+          files: av-metrics-tool.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
