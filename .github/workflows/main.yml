@@ -80,6 +80,6 @@ jobs:
         with:
           name: Version ${{ steps.data.outputs.version }}
           body_path: CHANGELOG.txt
-          files: av-metrics-tool.exe
+          files: build/world.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
