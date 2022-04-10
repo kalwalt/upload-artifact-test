@@ -75,7 +75,7 @@ jobs:
           echo "::set-output name=version::$VERSION"
           #tail -n +2 CHANGELOG.md | sed -e '/^$/,$d' > CHANGELOG.txt
       - name: Create a release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           name: Version ${{ steps.data.outputs.version }}
