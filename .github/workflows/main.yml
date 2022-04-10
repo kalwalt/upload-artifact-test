@@ -77,7 +77,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: Version ${{ steps.data.outputs.version }}
-          body-path: CHANGELOG.txt
+          body_path: CHANGELOG.txt
           files: av-metrics-tool.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
